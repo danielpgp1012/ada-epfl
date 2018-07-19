@@ -1,0 +1,180 @@
+div{
+  font-family: "Georgia";
+}
+
+p{
+  text-align: justify;
+  /* font-family: sans-serif; */
+  font-size: 1em;
+}
+
+.vspace{
+  margin-bottom: 3cm;
+}
+
+#click_map{
+  text-align:center;
+  font-weight: bold;
+}
+
+.titles{
+  text-align: center;
+  display:table;
+  width:100%;
+  font-size: 3em;
+  font-family: "Georgia";
+  /* color : #AD2E24; */
+  /* color : #87ADFF; */
+  color : #425C96;
+}
+
+.containermap{
+    /* position:relative;
+    top:0px;
+    left:0px; */
+}
+
+.container{
+    float: top;
+    margin:auto;
+    width: 80%;
+
+}
+
+.legend_text{
+  font-size: 0.5em;
+
+}
+
+.row{
+  display:table;
+  min-height: 150px;
+  min-width: 10px;
+}
+
+.column {
+  display:table-cell;
+  margin:auto;
+}
+
+.column-title{
+  text-align: center;
+  display:table;
+  font-size: 0.8em;
+  font-family: "Georgia";
+  /* color : #AD2E24; */
+  /* color : #87ADFF; */
+  color : #425C96;
+}
+
+.tags{
+  display:table;
+  width:100%;
+  color : #4C4C4C;
+  font-weight: bold;
+  /* background-color: #0099ff; */
+  /* background-color: #FFE3C1; */
+  background-color: #C4D6FF;
+  text-align: center;
+}
+
+.subtags{
+  display:table;
+  width:100%;
+  color : #4C4C4C;
+  font-weight: bold;
+  background-color: #FFF1E0;
+  /* background-color: #cc5500; */
+  min-height: 150px;
+  min-width: 10px;
+  text-align: center;
+}
+
+.tag_selected{
+  background-color: #AAC5FF;
+}
+.tag{
+  display:inline-table;
+  width: 15%;
+  margin-left : 5px;
+  margin-right: 5px;
+}
+.tag:hover{
+  color : black;
+}
+
+.artists{
+  min-height:650px;
+}
+
+.artists_full{
+  min-height:300px;
+}
+
+.top_artist{
+  margin:5px;
+}
+
+
+.subtag{
+  display:inline-table;
+  width: 15%;
+  margin-left : 5px;
+  margin-right: 5px;
+}
+
+
+img {
+    border-radius: 50%;
+}
+
+
+.slider {
+    -webkit-appearance: none;
+    width: 50%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #0093FF;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #0093FF;
+    cursor: pointer;
+}
+
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    /* background-color: #66a3ff; /* Set a background color */ 
+    background-color: #C4D6FF;
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+}

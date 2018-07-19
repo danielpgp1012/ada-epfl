@@ -1,0 +1,5 @@
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+project/data/MillionSongSubset/data
+*.h5
+millionsongsubset_full/data

@@ -1,0 +1,82 @@
+div{
+  font-family: "Georgia";
+}
+
+
+.column {
+    float: left;
+    margin-right: 10px;
+    margin-left: 10px;
+    /* background-color: blue; */
+}
+
+.row{
+  float: top;
+}
+/* Clear floats after the columns */
+/* .row:after {
+    content: "";
+    display: table;
+    clear: both;
+} */
+.titles{
+  text-align: center;
+  display:table;
+  width:100%;
+  font-family: "Georgia";
+  /* color : #AD2E24; */
+  /* color : #87ADFF; */
+  color : #425C96;
+}
+
+
+#div_subtags{
+
+    display:table;
+    width:100%;
+    /* color : white; */
+    color : #4C4C4C;
+    font-weight: bold;
+    background-color: #FFF1E0;
+    /* background-color: #cc5500; */
+    /* background-color: #EEEEEE; */
+    min-height: 150px;
+    min-width: 10px;
+    text-align: center;
+
+}
+
+
+#div_tags{
+  display:table;
+  width:100%;
+  color : #4C4C4C;
+  font-weight: bold;
+  /* background-color: #0099ff; */
+  /* background-color: #FFE3C1; */
+  background-color: #C4D6FF;
+  text-align: center;
+
+}
+
+.tag_selected{
+  background-color: #AAC5FF;
+}
+
+.tag{
+  display:inline-table;
+  width: 15%;
+  margin-left : 5px;
+  margin-right: 5px;
+}
+
+.tag:hover{
+  color : black;
+}
+
+.subtag{
+  display:inline-table;
+  width: 15%;
+  margin-left : 5px;
+  margin-right: 5px;
+}

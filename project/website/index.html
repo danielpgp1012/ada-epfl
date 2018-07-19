@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>ADA Visualization</title>
+  </head>
+  <!-- <link rel="stylesheet" href="css/map.css">
+  <link rel="stylesheet" href="css/tags.css"> -->
+  <link rel="stylesheet" href="css/master.css">
+  <link rel="icon" href="favicon.png" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.12.0/d3.js" charset="utf-8"></script>
+  <script src="js/maps.js" charset="utf-8"></script>
+  <script src="js/tags.js" charset="utf-8"></script>
+  <script src="js/main_tags.js" charset="utf-8"></script>
+  <script src="js/top_artists.js" charset="utf-8"></script>
+  <script src="js/top_artists_full.js" charset="utf-8"></script>
+  <body>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <script type="text/javascript">
+    create_map_title();
+  </script>
+
+<p class="vspace"></p>
+<div class="container">
+    <ul>
+      <li> <a href="#introduction">Introduction</a></li>
+      <li> <a href="#dataset">The dataset</a> </li>
+      <li> <a href="#cluster">Clustering the tags</a> </li>
+      <li> <a href="#the_map">The interactive map</a> </li>
+      <li> <a href="#stacked_">Main tags through time</a> </li>
+      <li> <a href="#main_influencer">Main influencers</a> </li>
+    </ul>
+</div>
+<p class="vspace"></p>
+
+    <div class="container" id="introduction">
+<p>
+  Have you ever wondered how did music evolve through time and space ? From the drums in the roman army motivating the soldiers to face death for the greatness of Rome, to the catchy electronic music we can hear today on the radio, a lot happened. Today with the democratization of the internet, portable music devices and communication tools, it has become even easier to share music. From 1920 to today, many new music genres emerged. They all influence one and another to create this very diverse set of different styles, each transmitting different emotions. Each music genre originating from a particular country and quickly spreading around the world, conquering the hearts of listeners without frontiers.
+</p>
+<p>
+  Our goal is to show you how music evolved through time between 1920 and 2010, and how each new music style spread through the world.
+</p>
+<p>
+  We based our study on the Million Song dataset. We will first explain you relatively briefly what kind of data we had and what information we were able to infer from it. We will then dive deep into the heart of our analysis with a beautiful interactive world map where you will be able to observe the evolution of music around the globe through time. After playing around a little bit, and enjoying this masterpiece of engineering we will try to study who are the main influencers of the music industry for each genre and through the years.
+</p>
+    </div>
+
+    <div class="container" id="dataset">
+            <h2 class="titles">The Dataset</h2>
+            <p>
+              This dataset contains a million song. A subset of these songs was also available that consisted of only 10 000 songs which we also use in some part of the analysis. We will come back to this detail later. The version of the dataset that we had access, consisted however of only around half a million songs, because it took too long for the cluster team to extract it fully. The dataset contained the metadata of the songs in particular the following features:
+            </p>
+            <ul>
+              <li>The title of the song</li>
+              <li>The artist</li>
+              <li>The artist location</li>
+              <li>Tags that were associated to the song</li>
+              <li>The release date of the song</li>
+              <li>The artist similar to the artist of the song</li>
+            </ul>
+    </div>
+
+    <div class="container" id="cluster">
+      <h2 class="titles"> Clustering the tags</h2>
+      <p>
+        Even though the genre of the song was not available, we were able to infer it from the tags. Though the matching was not perfect, we decided to cluster the tens of thousands of tags in around 150 main tags, that we consider as main genres.  We will discuss the technicalities of the procedure in the notebook. The clustering  is not very accurate for tags that don’t appear in a lot of songs, but works very well for tags that are more common. Below you will find a beautiful visualization that show which tags are contained in each main tag (or genre).
+        It can also be a way to understand what a genre means ! For example if you would be interested in knowing what gospel is, you would learn that it consists of :"black gospel"  "christian inspirational"  "church"  "evangelica"  "gospel choir"  "gospel jams"  "hillsong"  "southern gospel"  "traditional gospel"  "urban gospel".
+      </p>
+    </div>
+
+
+    <script type="text/javascript">
+      create_tags_subtags();
+    </script>
+
+    <div class="container" id="the_map">
+      <h2 class="titles">The interactive map</h2>
+      <p>
+        Below, you will find a world map, colored by the main genre of each country. As you can see, you can interact with it by sliding the cursor to display the map at different point of time. You can also click on the button play! to let yourself be carried away by an automatic exploration through the years.
+      </p>
+    </div>
+
+  <script type="text/javascript">
+    create_map();
+  </script>
+
+<div class="container" id="stacked_">
+  <p>
+    As you can observe, the genres evolved throughout the years and are different from one country to another. Between 1920 and 1950, the main genre was blues. Then Rock started becoming the most popular music around the world and kept this position as the prominent genre, soon conquering the ears of the northern americans and europeans and seducing southern americans a few years later. As we can see, new genres appear through time. Blues slowly disappearing for example, giving some space for electronic music.
+  </p>
+  <p>
+    This map is great to see where the different genres come from and what kind of music people listen to in each country. It can however be somewhat difficult to see which are the main genres in a particular time period. This is also because we only see the main genre per country, but we are unable to see what is the second main genre of the said country. So that you can have a better insight of the different music currents in a particular time period. We show you now the following stacked bar plot. It contains the main genres per time period and gives you a better understanding of what kind of music people used to listen through time.
+  </p>
+</div>
+
+<script type="text/javascript">
+  create_main_tags_title();
+</script>
+
+  <script type="text/javascript">
+    create_main_tags();
+  </script>
+
+  <div class="container">
+    <p>
+      As you can see, from 1920 to 1950, we mainly have jazz, blues and a little bit of rock. Then from 1950, rock becomes the leading genre, closely followed by pop. From 1970, blues disappears from the top 7 genres and the electronic genre makes its entrance in 3rd place closely behind pop, gaining more proportion of the songs each year. In 1990, hip hop enters the top 7. In 2000, jazz gives its place to indie music and electronic takes the second place before pop.
+    </p>
+    <p>
+      Overall, rock stayed in the leading genre from 1920-2010, but we can clearly see the evolution, with blues and jazz disappearing from the top 7 to give space to more recent music genres such as electronic and pop songs.
+    </p>
+  </div>
+
+  <div class="container" id="main_influencer">
+    <h2 class="titles">Main influencers</h2>
+      <p>
+        It is great to see how music evolved throughout time and in the world but who are the actors behind this evolution ? To tackle that question we have computed the artists who are considered to influence the most a genre.
+      </p>
+      <p>
+        We provide you two similar visualizations for this insight. The first one, ran on the subset of the songs. Thanks to a modified PageRank algorithm we were able to compute who were the artists considered as references for each genre at each time period. Below you will find the most influential artists according to our algorithm.
+      </p>
+  </div>
+
+
+  <script type="text/javascript">
+    create_top_artists();
+  </script>
+
+  <div class="container">
+    <p>
+      Already in this subset visualization, there are few interesting observations we can make but first, it is important to understand what is displayed. We selected the 20 most frequent tags per time period. For each tags, we then computed the top 5 artists. So as an example if you look at the tag alternative, it was a genre that was very popular between 1970 and 2010 but the main artist started changing over the periods as it first started with The Rolling Stones, then with Radiohead in the 90s and finally with Led Zeppelin in the 21st century. Note that there is no top artists before 1970 which means that alternative was not one of the top 20 main genre of this time period but it doesn’t mean that there was no alternative artist before 1970. Another observation that needs to be pointed out is that we are working on *only* 10’000 songs and of course, a lot of very famous artists are omitted in this demonstration. Finally, we can see that some results are limited as we are dependent on the list of tags and those are sometimes not relevant. When we take for example the tag rap, we have U2 and Red Hot Chili Peppers in the top list because there is ‘rap’ as a tag in the music they write. They are however far from playing rap.
+    </p>
+    <p>
+      Then we decided to run this algorithm on the full dataset. But we didn’t fetch the pictures for each artist this time. You can find it just below
+    </p>
+  </div>
+
+  <script type="text/javascript">
+    create_top_artists_full();
+  </script>
+
+  <div class="container">
+    <p>
+      The data presented here is similar than for the subset but there is one slight difference. Here we computed the rank for the top 20 tags of each time periods but this time for all time periods. So for instance if you pick hard rock, even if it may not be in the top 20 tags of each time periods but only one, we will still show a top 5 of the artists for each periods. From this specific example, we can see that The Stooges is beating Jimi Hendrix between the 1950 and 1970, then Jimi Hendrix passes over them in the 70s and The Stooges finally take back the lead. It is interesting to see that, on the one hand, we have much more diverse rankings  that with the full dataset but on the other hand, it is sometimes not as relevant as for the subset. For example if we take rock, there are few artists that are not so famous.
+    </p>
+  </div>
+
+  <div class="container" id="conclusion">
+    <p>
+      We hope you enjoyed this travel in time in the world of music and gained more insight on the evolution the genres in music. As you can see, we started in 1920 with jazz, blues and finished in 2010 with a lot of electronic, rock and pop songs. We also saw that each predominant genre in each country varies throughout the world, which means every country has its own style of music.
+    </p>
+  </div>
+
+  </body>
+
+
+<script type="text/javascript">
+</script>
+
+<script type="text/javascript">
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+
+</script>
+
+</html>
